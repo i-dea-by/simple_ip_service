@@ -65,7 +65,7 @@ routes = [
 ]
 
 
-app = Starlette(debug=True, routes=routes)
+app = Starlette(routes=routes)
 
 if __name__ == "__main__":
     import uvicorn
