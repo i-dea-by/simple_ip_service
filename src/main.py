@@ -9,7 +9,7 @@ from starlette.routing import Mount, Route
 from starlette.staticfiles import StaticFiles
 
 import templates
-from config import STATIC_DIR
+from config import BASE_URL, STATIC_DIR
 from errors import exception_handlers
 
 
@@ -24,7 +24,7 @@ def extract_ip(request: Request):
 async def homepage(request: Request):
     """Home page answer"""
     ip = extract_ip(request)
-    return HTMLResponse(templates.mainpage_html.substitute(ip=ip))
+    return HTMLResponse(templates.mainpage_html.substitute(ip=ip, base_url=BASE_URL))
 
 
 async def ip(request: Request):
