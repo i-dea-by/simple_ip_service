@@ -10,6 +10,7 @@ from starlette.staticfiles import StaticFiles
 
 import templates
 from config import STATIC_DIR
+from errors import exception_handlers
 
 
 def extract_ip(request: Request):
@@ -65,7 +66,7 @@ routes = [
 ]
 
 
-app = Starlette(routes=routes)
+app = Starlette(routes=routes, exception_handlers=exception_handlers)
 
 if __name__ == "__main__":
     import uvicorn
