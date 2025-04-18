@@ -1,7 +1,7 @@
 [project]
-name = "ip-service"
+name = "IP API service"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple IP address API"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
