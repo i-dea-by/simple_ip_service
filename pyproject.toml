@@ -1,5 +1,5 @@
 [project]
-name = "ip-service"
+name = "simple_ip_service"
 version = "0.1.0"
 description = "A simple IP address API"
 readme = "README.md"
