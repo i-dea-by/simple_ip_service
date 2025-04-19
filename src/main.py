@@ -40,12 +40,12 @@ async def json(request: Request):
     return Response(content=answer, media_type="application/json")
 
 
-def robots(request: Request):
+async def robots(request: Request):
     """Return robots.txt"""
     return PlainTextResponse(templates.robots_txt)
 
 
-def sitemap(request: Request):
+async def sitemap(request: Request):
     """Return sitemap.xml"""
     return Response(content=templates.sitemap_xml, media_type="application/xml")
 
