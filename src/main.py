@@ -5,8 +5,7 @@ Deploy with uvicorn --proxy-headers
 from starlette.applications import Starlette
 from starlette.requests import Request
 from starlette.responses import FileResponse, HTMLResponse, PlainTextResponse, Response
-from starlette.routing import Mount, Route
-from starlette.staticfiles import StaticFiles
+from starlette.routing import Route
 
 import templates
 from config import BASE_URL, STATIC_DIR
@@ -62,7 +61,6 @@ routes = [
     Route("/favicon.ico", endpoint=favicon),
     Route("/robots.txt", endpoint=robots),
     Route("/sitemap.xml", endpoint=sitemap),
-    Mount("/static", app=StaticFiles(directory=STATIC_DIR), name="static"),
 ]
 
 
