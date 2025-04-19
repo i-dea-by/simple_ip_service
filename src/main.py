@@ -24,13 +24,13 @@ def extract_ip(request: Request):
 async def homepage(request: Request):
     """Home page answer"""
     ip = extract_ip(request)
-    return HTMLResponse(templates.mainpage_html.substitute(ip=ip, base_url=BASE_URL))
+    return HTMLResponse(content=templates.mainpage_html.substitute(ip=ip, base_url=BASE_URL))
 
 
 async def ip(request: Request):
     """Returns the IPv4 address of the client as plain text XX.XX.XX.XX"""
     ip = extract_ip(request)
-    return PlainTextResponse(ip)
+    return PlainTextResponse(content=ip)
 
 
 async def json(request: Request):
@@ -42,7 +42,7 @@ async def json(request: Request):
 
 async def robots(request: Request):
     """Return robots.txt"""
-    return PlainTextResponse(templates.robots_txt)
+    return PlainTextResponse(content=templates.robots_txt)
 
 
 async def sitemap(request: Request):
