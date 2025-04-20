@@ -65,8 +65,3 @@ routes = [
 
 
 app = Starlette(routes=routes, exception_handlers=exception_handlers)
-
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run("main:app")
