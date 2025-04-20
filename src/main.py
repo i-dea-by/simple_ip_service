@@ -69,4 +69,4 @@ app = Starlette(routes=routes, exception_handlers=exception_handlers)
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:app")
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, proxy_headers=True)
