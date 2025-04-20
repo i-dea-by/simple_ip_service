@@ -19,14 +19,10 @@ EXPOSE 8000
 
 WORKDIR /app
 
-COPY pyproject.toml .
-
-COPY uv.lock .
-
-RUN uv venv
+COPY pyproject.toml uv.lock ./
 
 RUN uv sync --frozen
 
-COPY src/ .
+COPY src .
 
 CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--proxy-headers"]
