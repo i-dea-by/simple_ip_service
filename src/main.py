@@ -7,8 +7,8 @@ from starlette.requests import Request
 from starlette.responses import FileResponse, HTMLResponse, PlainTextResponse, Response
 from starlette.routing import Route
 
+import config
 import templates
-from config import BASE_URL, STATIC_DIR
 from errors import exception_handlers
 
 
@@ -23,7 +23,7 @@ def extract_ip(request: Request):
 async def homepage(request: Request):
     """Home page answer"""
     ip = extract_ip(request)
-    return HTMLResponse(content=templates.mainpage_html.substitute(ip=ip, base_url=BASE_URL))
+    return HTMLResponse(content=templates.mainpage_html.substitute(ip=ip, base_url=config.BASE_URL))
 
 
 async def ip(request: Request):
@@ -51,7 +51,7 @@ async def sitemap(request: Request):
 
 async def favicon(request: Request):
     """Return favicon.ico"""
-    return FileResponse(STATIC_DIR / "favicon.ico")
+    return FileResponse(config.STATIC_DIR / "favicon.ico")
 
 
 routes = [
@@ -69,4 +69,10 @@ app = Starlette(routes=routes, exception_handlers=exception_handlers)
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, proxy_headers=True)
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=int(config.PORT),
+        workers=int(config.WORKERS),
+        proxy_headers=True,
+    )
