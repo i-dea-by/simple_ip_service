@@ -28,4 +28,4 @@ RUN uv sync --frozen
 
 COPY src .
 
-CMD ["uv", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--proxy-headers"]
+CMD ["uv", "run", "main.py"]
