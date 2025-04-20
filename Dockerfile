@@ -1,5 +1,12 @@
 FROM python:3.13-slim-bookworm
 
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+WORKDIR /app
+
+EXPOSE 8000
+
 # The installer requires curl (and certificates) to download the release archive
 RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
 
@@ -14,10 +21,6 @@ ENV PATH="/root/.local/bin/:$PATH"
 
 # Enable bytecode compilation
 ENV UV_COMPILE_BYTECODE=1
-
-EXPOSE 8000
-
-WORKDIR /app
 
 COPY pyproject.toml uv.lock ./
 
