@@ -15,7 +15,6 @@ Service provides several endpoints for retrieving the client's IP address in var
 
 Configure by edit `config.py` or set enviroment variable:
   - BASE_URL: default value "https://your-domain.com"
-  - HOST: default value "0.0.0.0"
   - PORT: default value 8000
   - WORKERS: default value 1
 
