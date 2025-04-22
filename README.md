@@ -2,6 +2,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff)](https://hub.docker.com/r/ideaby/ipservice)
 
 
 ### Description
@@ -31,6 +32,10 @@ Configure by edit `config.py` or set enviroment variable:
   WORKERS=1
   uv run src/main.py
   ```
+
+## Docker hub repo
+
+  - "https://hub.docker.com/r/ideaby/ipservice⁠"
 
 
 ## License
