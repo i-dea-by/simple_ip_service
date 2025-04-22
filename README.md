@@ -11,10 +11,14 @@ Service provides several endpoints for retrieving the client's IP address in var
 - **`/json`**: Returns the IP address in JSON format.
 
 
+### Running example
+
+  - "http://194.182.84.44:8000/⁠"
+
 ### Configure settings:
 
 Configure by edit `config.py` or set enviroment variable:
-  - BASE_URL: default value "https://your-domain.com"
+  - BASE_URL: represent service address/name on main page - default value "https://your-domain.com"
   - PORT: default value 8000
   - WORKERS: default value 1
 
