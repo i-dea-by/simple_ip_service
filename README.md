@@ -14,7 +14,7 @@ Service provides several endpoints for retrieving the client's IP address in var
 
 ### Running example
 
-  - "http://194.182.84.44:8000/⁠"
+  - http://194.182.84.44:8000
 
 ### Configure settings:
 
